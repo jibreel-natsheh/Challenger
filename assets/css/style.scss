@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
 
 $main-font: 'Open Sans', sans-serif;
+:root{
+    --main-color: #E958A2;
+    --second-color: #866f88;
+}
 body{
     margin: 0px;
     padding: 0px;
@@ -11,9 +15,40 @@ body{
     padding-left: 5%;
     padding-top: 5%;
     padding-bottom: 5%;
-    background: linear-gradient(20deg, #E958A2 0%, #A028A9 50%);
+    background: linear-gradient(20deg, var(--main-color) 0%, var(--second-color) 50%);
     .main-content{
-
+        .color-pickers{
+            align-content: center;
+            align-self: center;
+            display: inline-flex;
+            position: relative;
+            align-items: center;
+            background-color: white;
+            background-size: cover;
+            border-radius: 100px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .color-box-main{
+                margin-right: 50px;
+                width: 30px;
+                height: 30px;
+                background-color: var(--main-color);
+            }
+            .color-box-sec{
+                margin-right: 50px;
+                width: 30px;
+                height: 30px;
+                background-color: var(--second-color);
+            }
+            input[type='color']{
+                width : 100px;
+                height: 40px;
+                padding: 5px;
+                margin-right: 20px;
+            }
+        }
         h1{
             margin: 0px;
             font-family: $main-font;

@@ -9,6 +9,13 @@
 <body>
     <section class="intro">
         <div class="main-content">
+            <div class="color-pickers" align="center">
+                <div class="color-box-main"></div>
+                <input type="color" id="main-color" onchange="changeColors()">
+                <div class="color-box-sec"></div>
+                <input type="color" id="second-color" onchange="changeColors()">
+
+            </div>
             <img src="assets/img/Exams-bro (2).png" alt="background-thing">
             <h1>Challenger</h1>
             <h2>Test Your Knowledge and Skills Instantly</h2>
@@ -20,5 +27,27 @@
         </div>
         
     </section>
+    <script>
+        let old_main = getComputedStyle(document.documentElement).getPropertyValue('--main-color');
+        let old_second = getComputedStyle(document.documentElement).getPropertyValue('--second-color');
+        function onStart(){
+            document.getElementById('main-color').value = old_main;
+            document.getElementById('main-color').value = old_second;
+        }
+        window.onload = onStart;
+        
+
+        function changeColors(){
+            var main = document.getElementById('main-color').value;
+            var second = document.getElementById('second-color').value;
+
+            
+            document.documentElement.style.setProperty('--main-color', main);
+            document.documentElement.style.setProperty('--second-color', second);
+        }
+        
+
+        
+    </script>
 </body>
 </html>
